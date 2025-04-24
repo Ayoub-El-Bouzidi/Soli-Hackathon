@@ -1,0 +1,3 @@
+# Idéation
+
+Pour répondre à l'absence de solution numérique pendant la Coupe du Monde 2030, nous avons imaginé une plateforme mobile qui connecte rapidement demandeurs de services et chercheurs d’emploi locaux. Les utilisateurs peuvent poster ou accepter des tâches simples comme laver une voiture ou promener un chien. La géolocalisation, les annonces vocales en dialecte local et les évaluations renforcent la confiance. Cette approche favorise l’emploi local et l’inclusion digitale.
