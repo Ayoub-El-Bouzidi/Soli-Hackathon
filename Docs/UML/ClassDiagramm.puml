@@ -1,0 +1,62 @@
+@startuml
+class Utilisateur {
+  - id: int
+  - nom: String
+  - email: String
+  - motDePasse: String
+  + seConnecter(): boolean
+  + seDeconnecter(): void
+}
+
+class Admin {
+  -id: int
+  + gererUtilisateurs(): void
+  + gererServices(): void
+  + voirRapports(): void
+  + validerEmploye(employeId: int): void
+}
+
+class Client {
+  -id: int
+'   - servicesPublies: List<Service>
+  + creerService(service: Service): void
+  + modifierService(serviceId: int): void
+  + supprimerService(serviceId: int): void
+  + voirEmployesInteressés(): List<Employe>
+  + voirFeedbackEmploye(employeId: int): List<Feedback>
+}
+
+class Employe {
+  -id: int
+'   - servicesInteressés: List<Service>
+  + voirServices(): List<Service>
+  + marquerCommeIntéressé(service: Service): void
+  + envoyerMessageAuClient(message: Message): void
+}
+
+class Service {
+  - id: int
+  - description: String
+  - statut: String
+  + publierService(): void
+  + mettreAJourService(): void
+}
+
+class Message {
+  - id: int
+  - contenu: String
+'   - idExpediteur: int
+'   - idDestinataire: int
+  + envoyer(): void
+  + lire(): void
+}
+
+Utilisateur <|-- Admin
+Utilisateur <|-- Client
+Utilisateur <|-- Employe
+Client "1" -- "*" Service : publie
+Employe "*" -- "*" Service : marque comme intéressé
+Client "1" -- "*" Message : envoie des messages à
+Employe "*" -- "*" Message : envoie/recevons des messages
+
+@enduml

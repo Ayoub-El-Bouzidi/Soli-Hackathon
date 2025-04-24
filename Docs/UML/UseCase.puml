@@ -1,0 +1,46 @@
+@startuml
+top to bottom direction
+
+actor Admin
+actor Client
+actor Employe as "Employé"
+
+rectangle "Système de services" {
+
+  (Gérer utilisateurs) as GU
+  (Gérer services) as GS
+  (Gérer employés et clients) as GEC
+  (Gérer contenu) as GC
+  (Voir rapports/statistiques) as RS
+
+  (Créer compte / Connexion) as CC
+  (Poster un service) as PS
+  (Modifier/Supprimer service) as MS
+  (Consulter candidatures) as CS
+  (Envoyer message à un employé) as EMC
+
+  (Consulter services) as COS
+  (Marquer comme intéressé) as MI
+  (Envoyer message à un client) as EMC2
+  (Gérer profil) as GP
+
+  Admin --- GU
+  Admin --- GS
+  Admin --- GEC
+  Admin --- GC
+  Admin --- RS
+
+  Client --- CC
+  Client --- PS
+  Client --- MS
+  Client --- CS
+  Client --- EMC
+
+  Employe --- CC
+  Employe --- COS
+  Employe --- MI
+  Employe --- EMC2
+  Employe --- GP
+}
+
+@enduml
